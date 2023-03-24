@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "UserDelete";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+@model MemleketKütüphanesi_.Models.User
+
+<!-- deleteUser start -->
+<div class="rounded-4 m-4 px-4 pt-4 pb-3" style="background-color: #f8f9fa;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; width: 100%;">
+    <div class="d-flex align-items-center">
+        <!-- Değişiklik yapılacak kullanıcının Tc Nosu -->
+        <form class="d-flex align-items-center" asp-controller="Dashboard" asp-action="_PartialDeleteUser" method="post">
+            <label for="userTc" class="fw-semibold me-3" style="font-size: 14px;">Üye Tc Kimlik Numarası :</label>
+            <input style="max-width: 40%;" type="number" id="userTc" class="form-control" asp-for="TcNo">
+            <button class="btn btn-outline-dark ms-2" style="font-size: 12px;">Kontrol Et</button>
+        </form>
+        <span class="text-danger" style="font-size : 12px;">@ViewBag.ErrorMessage</span>
+    </div>
+    <div class="mt-4">
+        <!-- Değişiklik yapılacak kişi varsa tablodaki diğer tüm bilgileri -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">İsim</th>
+                    <th scope="col">Soyisim</th>
+                    <th scope="col">Tc</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Cinsiyet</th>
+                    <th scope="col">Doğum Tarihi</th>
+                    <th scope="col">Telefon Numarası</th>
+                    <th scope="col">Ceza Puanı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@ViewBag.name</td>
+                    <td>@ViewBag.surname</td>
+                    <td>@ViewBag.tc</td>
+                    <td>@ViewBag.email</td>
+                    <td>@ViewBag.gender</td>
+                    <td>@ViewBag.birthday</td>
+                    <td>@ViewBag.phone</td>
+                    <td>@ViewBag.reports</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <form class="d-flex flex-column" asp-controller="Dashboard" asp-action="SetDeleteUser" method="post">
+            <button class="ms-auto mt-2 btn btn-outline-danger fw-semibold">Kullanıcıyı Sil</button>
+            <span class="text-success ms-auto mt-2 fw-semibold" style="font-size : 15px;">@ViewBag.DeleteSuccess</span>
+            <input style="display: none" type="number" id="userTc" asp-for="TcNo" value="@ViewBag.tc">
+        </form>
+    </div>
+</div>
+<!-- deleteUser end -->
+

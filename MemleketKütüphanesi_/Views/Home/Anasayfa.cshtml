@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- header start -->
+<div>
+    <header style="background-color: #ffc017;">
+        <nav style="border-bottom: 1px solid #35313b; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+            <div class="container d-flex align-items-center justify-content-between py-1">
+                <div class="navbar-header d-flex align-items-center ">
+                    <img src="./img/icon-library.png" alt="Kütüphane Logo" style="width: 50px;" class="mx-2">
+                    <h5 class="m-0">Memleket Kütüphanesi</h5>
+                </div>
+                <div class="navbar-nav">
+                    <ul class="m-0 d-flex align-items-center" style="list-style : none">
+                        <li><a href="#" class="text-dark fw-semibold mx-2" style="text-decoration: none;">Hakkımızda</a></li>
+                        <li><a href="#" class="text-dark fw-semibold mx-2" style="text-decoration: none;">İletişim</a></li>
+                        <li><a href="#" class="text-dark fw-semibold mx-2" style="text-decoration: none;"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a class="text-dark fw-semibold ms-1" style="text-decoration: none;" asp-controller="Login" asp-action="_PartialUserLogin">Giriş Yap</a></li>
+                        <li><a class="text-dark fw-semibold ms-1" style="text-decoration: none;" asp-controller="Login" asp-action="_PartialEmployeeLogin">Personel Girişi Yap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+<!-- header end -->
+
+<div class="container">
+    <div class="d-flex align-items-center justify-content-center flex-column">
+        <h2 class="p-0 mt-5 mb-3 fw-bold">Memleket Kütüphanesi</h2>
+        <span class="fw-semibold">Türkiye'nin en büyük kitap yurdu...</span>
+    </div>
+</div>
+
+<div class="container p-0 mt-3">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/yeni.png" class="d-block w-100" alt="..." style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/harry potter.png" class="d-block w-100" alt="..." style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/237-536x354.jpg" class="d-block w-100" alt="..." style="max-height: 400px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "_PartialAddBook";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+@model MemleketKütüphanesi_.Models.Book
+
+<!-- Addbook start -->
+        <div  class="rounded-4 m-4 px-4 pt-4 pb-3" style="background-color: #f8f9fa;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; width: 100%;">
+            <h3 class="mb-4">Kitap Ekle</h3>
+            <form asp-controller="BookWorks" asp-action="_PartialAddBook" method="post">
+                <div class="d-flex align-items-center mb-3"> 
+                    <label for="bookName" class="fw-semibold" style="width: 100px;color: rgb(56, 56, 56);font-size: 15px;">Kitap İsmi</label>
+                    <input type="text" class="form-control" id="bookName" style="width: 35%;" asp-for="Name">
+                    <span class="text-danger fw-semibold ms-3" style="font-size: 14px;">@ViewBag.ErrorMessage</span>
+                </div>
+                <div class="d-flex align-items-center mb-3"> 
+                    <label for="bookAuthor" class="fw-semibold" style="width: 100px;color: rgb(56, 56, 56);font-size: 15px;">Kitap Yazarı</label>
+                    <input type="text" class="form-control" id="bookAuthor" style="width: 35%;" asp-for="Author">
+                </div>
+                <div class="d-flex align-items-center mb-3"> 
+                    <label for="publishHouse" class="fw-semibold" style="width: 100px;color: rgb(56, 56, 56);font-size: 15px;">Yayınevi</label>
+                    <input type="text" class="form-control" id="publishHouse" style="width: 35%;" asp-for="PublishHouse">
+                </div>
+                <div class="d-flex align-items-center mb-3"> 
+                    <label for="numberPage" class="fw-semibold" style="width: 100px;color: rgb(56, 56, 56);font-size: 15px;">Sayfa Sayısı</label>
+                    <input type="number" class="form-control" id="numberPage" style="width: 35%;" asp-for="Page">
+                </div>
+                <div class="d-flex align-items-center mb-3"> 
+                    <label for="dateOfIssued" class="fw-semibold" style="width: 100px;color: rgb(56, 56, 56);font-size: 15px;">Yayım Tarihi</label>
+                    <input type="datetime" class="form-control" id="dateOfIssued" style="width: 35%;" asp-for="DateOfIssued">
+                </div>
+                <div class="mt-3 d-flex flex-column" style="width: 44%;">
+                    <button class="btn btn-outline-dark ms-auto" style="font-size: 12px;">Kitap Ekle</button>
+                    <span class="text-success fw-semibold ms-auto mt-3" style="font-size: 14px;">@ViewBag.SuccessMessage</span>
+                </div>
+            </form>
+        </div>
+<!-- Addbook end -->
+

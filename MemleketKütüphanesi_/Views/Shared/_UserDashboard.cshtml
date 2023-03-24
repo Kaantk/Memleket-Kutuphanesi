@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giriş Yap</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/font-awesome/css/all.min.css">
+</head>
+<body style="background-color: #e9e7e4;">
+
+    <div class="d-flex">
+        <!-- sidebar start -->
+        <div class="py-3 px-3" id="left-sidebar" style="min-width: 15%; background-color: #f8f9fa; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;min-height: 100vh;">
+            <!-- <div class="d-flex align-items-center pb-3" style="border-bottom: 1px solid gray;">
+                <img src="https://picsum.photos/200/300" class="rounded-circle" alt="" style="width : 40px ;height: 40px;">
+                <span class="ms-2 fw-semibold">Kaan Tetik</span>
+            </div> -->
+            <div id="sidebar-nav">
+                <ul class="p-0 m-0 mt-3" style="list-style: none;">
+                    @*<li class="mb-3 pt-3" style="border-top: 1px solid gray;">
+                        <i class="fa-solid fa-users fs-5 me-2"></i>
+                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_PartialGetUserList" style="text-decoration: none;">Üyeleri Listele</a>
+                    </li>
+                    <li class="fw-semibold mb-3">
+                        <i class="fa-solid fa-users-gear fs-5 me-2"></i>
+                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_PartialUpdateUser" style="text-decoration: none;">Üye Güncelle</a>
+                    </li>
+                    <li class="fw-semibold mb-3">
+                        <i class="fa-solid fa-trash fs-5 me-2"></i>
+                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_PartialDeleteUser" style="text-decoration: none;">Üye Sil</a>
+                    </li>*@
+                    <li class="fw-semibold mb-3">
+                        <i class="fa-solid fa-list fs-5 me-2"></i>
+                        <a class="fw-semibold text-dark" asp-controller="UserDashboard" asp-action="_PartialGetBookList" style="text-decoration: none;">Kitapları Listele</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- sidebar end -->
+        @RenderBody()
+
+    </div>
+
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "_PartialGetBookList";
+    Layout = "~/Views/Shared/_UserDashboard.cshtml";
+}
+
+@model IEnumerable<Book>
+
+<!-- getUserListPartial start -->
+<div class="rounded-4 m-4 px-3 pt-3 pb-1" style="background-color: #f8f9fa;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; width: 100%;">
+    <table class="table">
+        <thead>
+            <!-- Tablonun başlık kısmı -->
+            <tr>
+                <th scope="col">Kitap İsmi</th>
+                <th scope="col">Kitap Yazarı</th>
+                <th scope="col">Yayınevi</th>
+                <th scope="col">Sayfa Sayısı</th>
+                <th scope="col">Yayın Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tablonun içerik kısmı -->
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Author</td>
+                    <td>@item.PublishHouse</td>
+                    <td>@item.Page</td>
+                    <td>@item.DateOfIssued</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <!-- getUserListPartial end -->
+    <!-- Pagination Start -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination m-0">
+            <div class="d-flex ms-auto">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+</div>
+            </ul>
+          </nav>
+<!-- Pagination End -->
+        </div>
+<!-- getUserListPartial end -->
