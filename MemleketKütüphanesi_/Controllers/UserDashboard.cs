@@ -7,13 +7,13 @@ namespace MemleketKütüphanesi_.Controllers
     {
         MemleketLibraryContext dB = new MemleketLibraryContext();
 
-        public IActionResult UserDashboardLayout()
+        public IActionResult _UserDashboardLayout() // Kullanıcı dashboardu burada yüklenir.
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult _PartialGetBookList() // Kitap listesini getiren action'dır.
+        public IActionResult _GetBookList() // Kitap listesini getiren action'dır.
         {
             return View(dB.Books);
         }

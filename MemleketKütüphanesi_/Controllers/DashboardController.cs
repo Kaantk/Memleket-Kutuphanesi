@@ -14,7 +14,7 @@ namespace MemleketKütüphanesi_.Controllers
             return View();
         }
 
-        public IActionResult _PartialGetUserList() // User tablosunu listeler.
+        public IActionResult _GetUserList() // User tablosunu listeler.
         {
             return View(dB.Users); // User tablosu içerisindeki bilgileri View'e gönderir.
         }
@@ -69,11 +69,14 @@ namespace MemleketKütüphanesi_.Controllers
 
         }
 
-        #region _PartialUserUpdate
+        #region _UserUpdate
 
         public IActionResult SetUserUpdate(User model) // Kullanıcının yeni girilen değerlerini kaydererek, günceller.
         {
-            var user = dB.Users.FirstOrDefault(x => x.TcNo.Equals(GetUser(model).TcNo));
+            //var user = dB.Users.FirstOrDefault(x => x.TcNo.Equals(GetUser(model).TcNo));
+
+            var user = dB.Users.FirstOrDefault(x => x.TcNo == model.TcNo);
+
 
             user.Name = model.Name;
             user.Surname = model.Surname;
@@ -84,37 +87,37 @@ namespace MemleketKütüphanesi_.Controllers
 
             dB.SaveChanges();
             ViewBag.SuccessMessage = "Güncelleme işlemi başarılı.";
-            return View("_PartialUpdateUser");
+            return View("_UpdateUser");
         }
 
         [HttpGet]
-        public IActionResult _PartialUpdateUser()
+        public IActionResult _UpdateUser() // Kullanıcı güncelleştirme sayfasını getiren action'dır.
         {
-            return View("_PartialUpdateUser");
+            return View("_UpdateUser");
         }
 
         [HttpPost]
-        public IActionResult _PartialUpdateUser(User model)
+        public IActionResult _UpdateUser(User model) // Kullanıcı güncelleştirme işlemi yapan action'dır.
         {
             GetUser(model);
-            return View("_PartialUpdateUser");
+            return View("_UpdateUser");
         }
 
         #endregion
 
-        #region _PartialUserDelete
+        #region _UserDelete
 
         [HttpGet] 
-        public IActionResult _PartialDeleteUser()
+        public IActionResult _DeleteUser() // Kullanıcı silme sayfasını getiren action'dır.
         {
-            return View("_PartialDeleteUser");
+            return View("_DeleteUser");
         }
 
         [HttpPost]
-        public IActionResult _PartialDeleteUser(User model) // Tc no kontrolü yapar kullanıcı varsa bilgilerini,yoksa hata mesajını döndürür.
+        public IActionResult _DeleteUser(User model) // Tc no kontrolü yapar kullanıcı varsa bilgilerini,yoksa hata mesajını döndürür.
         {
             GetUser(model);
-            return View("_PartialDeleteUser");
+            return View("_DeleteUser");
         }
 
         public IActionResult SetDeleteUser(User model) // Kullanıcıyı User tablosundan siler.
@@ -123,7 +126,7 @@ namespace MemleketKütüphanesi_.Controllers
             dB.Users.Remove(user);
             dB.SaveChanges();
             ViewBag.DeleteSuccess = "Kullanıcı silme işlemi başarılı.";
-            return View("_PartialDeleteUser");
+            return View("_DeleteUser");
         }
 
         #endregion

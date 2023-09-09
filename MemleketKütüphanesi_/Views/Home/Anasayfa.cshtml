@@ -1,66 +1,121 @@
-﻿
-@{
-    ViewData["Title"] = "Anasayfa";
+﻿@{
+    ViewData["Title"] = "Memleket Kütüphanesi | Anasayfa";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!-- header start -->
-<div>
-    <header style="background-color: #ffc017;">
-        <nav style="border-bottom: 1px solid #35313b; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-            <div class="container d-flex align-items-center justify-content-between py-1">
-                <div class="navbar-header d-flex align-items-center ">
-                    <img src="./img/icon-library.png" alt="Kütüphane Logo" style="width: 50px;" class="mx-2">
-                    <h5 class="m-0">Memleket Kütüphanesi</h5>
-                </div>
-                <div class="navbar-nav">
-                    <ul class="m-0 d-flex align-items-center" style="list-style : none">
-                        <li><a href="#" class="text-dark fw-semibold mx-2" style="text-decoration: none;">Hakkımızda</a></li>
-                        <li><a href="#" class="text-dark fw-semibold mx-2" style="text-decoration: none;">İletişim</a></li>
-                        <li><a href="#" class="text-dark fw-semibold mx-2" style="text-decoration: none;"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a class="text-dark fw-semibold ms-1" style="text-decoration: none;" asp-controller="Login" asp-action="_PartialUserLogin">Giriş Yap</a></li>
-                        <li><a class="text-dark fw-semibold ms-1" style="text-decoration: none;" asp-controller="Login" asp-action="_PartialEmployeeLogin">Personel Girişi Yap</a></li>
-                    </ul>
+<header style="background-color: white; border-bottom : 1px solid #a7a7a7">
+    <div class="container px-0 py-2">
+        <nav class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center" id="nav-title">
+                <img src="~/img/icon-library.png" alt="Memleket Kütüphanesi Logo" style="width: 40px;">
+                <h5 class="m-0 ms-2"><a style="text-decoration : none;color : black" asp-controller="Home" asp-action="Anasayfa">Memleket Kütüphanesi</a></h5>
+            </div>
+            <div id="nav-navigation" class="d-flex align-items-center justify-content-between" style="width: 22%;">
+                <a class="text-dark fw-semibold" style="text-decoration: none;" asp-controller="Home" asp-action="AboutPage">Hakkımızda</a>
+                <a class="text-dark fw-semibold" style="text-decoration: none;" asp-controller="Home" asp-action="ContentPage">İletişim</a>
+                <div>
+                    <i class="fas fa-user header-user-profile-icon"></i>
+                    <a class="text-dark fw-semibold" style="text-decoration: none;" asp-controller="Login" asp-action="_UserLogin">Giriş Yap</a>
                 </div>
             </div>
         </nav>
-    </header>
-</div>
-<!-- header end -->
+    </div>
+</header>
 
-<div class="container">
-    <div class="d-flex align-items-center justify-content-center flex-column">
-        <h2 class="p-0 mt-5 mb-3 fw-bold">Memleket Kütüphanesi</h2>
-        <span class="fw-semibold">Türkiye'nin en büyük kitap yurdu...</span>
+<main>
+    <div style="position: relative;">
+        <img src="~/img/main-banner.png" style="width: 100%; height: 70%;">
+    </div>
+    <div style="position: absolute;left: 8%;top: 25%;color: white; width: 35%;">
+        <h2 class="fw-bold">İNŞA EDİLEN BİR KÜTÜPHANE YARATILAN BİR HAYATTIR.</h2>
+    </div>
+</main>
+
+<div>
+    <div class="container px-0 py-4 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center rounded-3" style="height : 125px; width: 50%;background-color: #ddddddee;position: relative;">
+            <span style="font-size: 25px;" class="fw-semibold">Hayatta en hakiki mürşit ilimdir.</span>
+        </div>
+        <img src="~/img/mustafa-kemal-ataturk-imzasi-png-photo-8.png" alt="" style="width: 70px; position: absolute; left: 875px; top: 600px;">
     </div>
 </div>
 
-<div class="container p-0 mt-3">
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<div class="container px-0 mb-5">
+    <div class="row">
+        <div class="col-4 px-0">
+            <table class="table border">
+                <thead>
+                    <tr>
+                        <th scope="col">Duyurular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kütüphanemiz yeni açılmıştır.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./img/yeni.png" class="d-block w-100" alt="..." style="max-height: 400px;">
-            </div>
-            <div class="carousel-item">
-                <img src="./img/harry potter.png" class="d-block w-100" alt="..." style="max-height: 400px;">
-            </div>
-            <div class="carousel-item">
-                <img src="./img/237-536x354.jpg" class="d-block w-100" alt="..." style="max-height: 400px;">
-            </div>
+        <div class="col-4">
+            <table class="table border">
+                <thead>
+                    <tr>
+                        <th scope="col">Toplam Kapasite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Doluluk %67</td>
+                    </tr>
+                    <tr>
+                        <td>Kapasite 2500</td>
+                    </tr>
+                    <tr>
+                        <td>Boş Yer 822</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="col-4">
+            <table class="table border">
+                <thead>
+                    <tr>
+                        <th scope="col">Gün</th>
+                        <th scope="col">Çalışma Saatleri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Pazartesi</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <th>Salı</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <th>Çarşamba</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <th>Perşembe</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <th>Cuma</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <th>Cumartesi</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <th>Pazar</th>
+                        <td>09:00 - 17:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

@@ -13,16 +13,20 @@ namespace MemleketKütüphanesi_.Controllers
             _logger = logger;
         }
 
-        public IActionResult Anasayfa()
+        public IActionResult Anasayfa() // Kütüphane anasayfasını yükler.
         {
-            
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult AboutPage() // Anasayfadaki Hakkımda kısmını yükler.
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
+        public IActionResult ContentPage() // Anasayfa iletişim kısmını yükler.
+        {
+            return View();
+        }
+
     }
 }

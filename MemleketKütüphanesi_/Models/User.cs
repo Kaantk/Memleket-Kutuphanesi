@@ -17,7 +17,7 @@ public partial class User
 
     public string Password { get; set; } = null!;
 
-    public string? Gender { get; set; }
+    public string Gender { get; set; }
 
     public DateTime BirthDay { get; set; }
 

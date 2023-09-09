@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "İletişim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header style="background-color: white; border-bottom : 1px solid #a7a7a7">
+        <div class="container px-0 py-2">
+            <nav class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center" id="nav-title">
+                    <img src="~/img/icon-library.png" alt="Memleket Kütüphanesi Logo" style="width: 40px;">
+                    <h5 class="m-0 ms-2"><a style="text-decoration : none;color : black" asp-controller="Home" asp-action="Anasayfa">Memleket Kütüphanesi</a></h5>
+                </div>
+                <div id="nav-navigation" class="d-flex align-items-center justify-content-between" style="width: 22%;">
+                    <a class="text-dark fw-semibold" style="text-decoration: none;" asp-controller="Home" asp-action="AboutPage">Hakkımızda</a>
+                    <a class="text-dark fw-semibold" style="text-decoration: none;" asp-controller="Home" asp-action="ContentPage">İletişim</a>
+                    <div>
+                        <i class="fas fa-user header-user-profile-icon"></i>
+                        <a class="text-dark fw-semibold" style="text-decoration: none;" asp-controller="Login" asp-action="_UserLogin">Giriş Yap</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<div class="container px-0 my-4">
+    <div style="border-bottom : 1px solid #a7a7a7" class="mb-3">
+        <h4 class="fw-bold text-body-emphasis">İletişim</h4>
+    </div>
+    <h5>Adres</h5>
+    <p class="fw-semibold">Maslak Mahallesi, Taşyoncası Sokak, No: 1V ve No:1Y Bina Kodu: 34481742, 34398 Sarıyer/İstanbul</p>
+    <h5>Telefon</h5>
+    <p>(0212) 210 10 10</p>
+</div>
+

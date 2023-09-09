@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Giriş Yap</title>
+    <title>@ViewData["Title"]</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -27,27 +27,33 @@
                 <ul class="p-0 m-0 mt-3" style="list-style: none;">
                     <li class="mb-3 pt-3" style="border-top: 1px solid gray;">
                         <i class="fa-solid fa-users fs-5 me-2"></i>
-                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_PartialGetUserList" style="text-decoration: none;">Üyeleri Listele</a>
+                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_GetUserList" style="text-decoration: none;">Üyeleri Listele</a>
                     </li>
                     <li class="fw-semibold mb-3">
                         <i class="fa-solid fa-users-gear fs-5 me-2"></i>
-                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_PartialUpdateUser" style="text-decoration: none;">Üye Güncelle</a>
+                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_UpdateUser" style="text-decoration: none;">Üye Güncelle</a>
                     </li>
                     <li class="fw-semibold mb-3">
                         <i class="fa-solid fa-trash fs-5 me-2"></i>
-                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_PartialDeleteUser" style="text-decoration: none;">Üye Sil</a>
+                        <a class="fw-semibold text-dark" asp-controller="Dashboard" asp-action="_DeleteUser" style="text-decoration: none;">Üye Sil</a>
                     </li>
                     <li class="fw-semibold mb-3">
                         <i class="fa-solid fa-list fs-5 me-2"></i>
-                        <a class="fw-semibold text-dark" asp-controller="BookWorks" asp-action="_PartialGetBookList" style="text-decoration: none;">Kitapları Listele</a>
+                        <a class="fw-semibold text-dark" asp-controller="BookWorks" asp-action="_GetBookList" style="text-decoration: none;">Kitapları Listele</a>
                     </li>
                     <li class="fw-semibold mb-3">
                         <i class="fa-solid fa-book-medical fs-5 me-2"></i>
-                        <a class="fw-semibold text-dark" asp-controller="BookWorks" asp-action="_PartialAddBook" style="text-decoration: none;">Kitap Ekle</a>
+                        <a class="fw-semibold text-dark" asp-controller="BookWorks" asp-action="_AddBook" style="text-decoration: none;">Kitap Ekle</a>
                     </li>
                     <li class="fw-semibold mb-3 pb-3" style="border-bottom: 1px solid gray;">
                         <i class="fa-solid fa-trash fs-5 me-2"></i>
-                        <a class="fw-semibold text-dark" asp-controller="BookWorks" asp-action="_PartialDeleteBook" style="text-decoration: none;">Kitap Sil</a>
+                        <a class="fw-semibold text-dark" asp-controller="BookWorks" asp-action="_DeleteBook" style="text-decoration: none;">Kitap Sil</a>
+                    </li>
+                </ul>
+                <ul class="p-0 m-0 mt-auto" style="list-style: none;">
+                    <li class="fw-semibold mt-auto">
+                        <i class="fa-solid fa-right-from-bracket fs-5 me-2"></i>
+                        <a class="fw-semibold text-dark" asp-controller="Home" asp-action="Anasayfa" style="text-decoration: none;">Anasayfaya Dön</a>
                     </li>
                 </ul>
             </div>

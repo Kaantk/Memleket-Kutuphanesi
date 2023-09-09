@@ -10,6 +10,8 @@ namespace MemleketKütüphanesi_
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddMvc();
+
             builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Program>());
 
             var app = builder.Build();

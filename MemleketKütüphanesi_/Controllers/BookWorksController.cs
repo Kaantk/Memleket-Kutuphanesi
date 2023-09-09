@@ -7,31 +7,31 @@ namespace MemleketKütüphanesi_.Controllers
     {
         MemleketLibraryContext dB = new MemleketLibraryContext();
 
-        public IActionResult _PartialGetBookList() // Kitap listesini getiren action'dır.
+        public IActionResult _GetBookList() // Kitap listesini getiren action'dır.
         {
             return View(dB.Books);
         }
 
         [HttpGet]
-        public IActionResult _PartialAddBook()
+        public IActionResult _AddBook() // Kitap ekleme sayfasını getiren action'dır.
         {
-            return View("_PartialAddBook");
+            return View("_AddBook");
         }
 
         [HttpPost]
-        public IActionResult _PartialAddBook(Book model) // Book tablosuna kitap ekleyip,kullanıcıya geri mesaj döndürür.
+        public IActionResult _AddBook(Book model) // Book tablosuna kitap ekleyip,kullanıcıya geri mesaj döndürür.
         {
-            if (CheckBook(model) == true)
+            if (CheckBook(model) == true) // Daha önceden aynı isimde bir kitap varsa buraya girer.
             {
                 ViewBag.ErrorMessage = "Bu isimde bir kitap zaten bulunmaktadır.";
-                return View("_PartialAddBook");
+                return View("_AddBook");
             }
-            else
+            else // Daha önce aynı isimde bir kitap kaydı yapılmadıysa kayıt işlemini yapar.
             {
                 dB.Books.Add(model);
                 dB.SaveChanges();
                 ViewBag.SuccessMessage = "Kayıt işlemi başarılı.";
-                return View("_PartialAddBook");
+                return View("_AddBook");
             }
         }
 
@@ -48,26 +48,26 @@ namespace MemleketKütüphanesi_.Controllers
         }
 
         [HttpGet]
-        public IActionResult _PartialDeleteBook()
+        public IActionResult _DeleteBook() // Kitap silme sayfasını getiren action'dır.
         {
-            return View("_PartialDeleteBook");
+            return View("_DeleteBook");
         }
 
         [HttpPost]
-        public IActionResult _PartialDeleteBook(Book model)
+        public IActionResult _DeleteBook(Book model) // Kitap silme işlemi burada yapılır.
         {
-            if (CheckBook(model) == true) // Burada kitap kontrolü var demektir ve gelen kitap silinecektir.
+            if (CheckBook(model) == true) // Burada kitap kontrolü yapılır ve eğer kitap bulunursa silinecektir.
             {
                 var deleteBook = dB.Books.FirstOrDefault(x => x.Name.Equals(model.Name)); // İlk önce gelen kitabın nesnesi yakalanır.
                 dB.Books.Remove(deleteBook);
                 dB.SaveChanges();
                 ViewBag.SuccessMessage = "Kitap silme işlemi başarılı.";
-                return View("_PartialDeleteBook");
+                return View("_DeleteBook");
             }
             else
             {
                 ViewBag.ErrorMessage = "Bu isimde bir kitap bulunmamaktadır.";
-                return View("_PartialDeleteBook");
+                return View("_DeleteBook");
             }
         }
     }
